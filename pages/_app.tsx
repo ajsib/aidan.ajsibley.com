@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Component {...pageProps} />
+      <div style={{ padding: '0 10%' }}>
+        <Component {...pageProps} />
+      </div>
     </ThemeProvider>
   );
 }
