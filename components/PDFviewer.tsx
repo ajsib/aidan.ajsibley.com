@@ -4,8 +4,6 @@ import React from 'react';
 
 interface PDFViewerProps {
   imageURL: string;
-  pdfURL: string;
-  markdownContent: string;
 }
 
 const PDFViewer: React.FC<PDFViewerProps> = ({ imageURL }) => {

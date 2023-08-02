@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
           </a>
         </Button>
       </div>
-      <PDFViewer imageURL={imageURL} pdfURL={pdfURL} />
+      <PDFViewer imageURL={imageURL} />
     </div>
   );
 };
