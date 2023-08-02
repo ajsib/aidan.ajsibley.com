@@ -2,6 +2,7 @@
 import React from 'react';
 import PDFViewer from '../components/PDFviewer';
 import { Button } from '@mui/material';
+import ReactMarkdown from 'react-markdown';
 
 const markdownContent = `
 # Welcome To My Resume Site 📄
@@ -18,14 +19,15 @@ const pdfURL = '/AidanSibleyCV.pdf'; // Replace this with the actual path to you
 const HomePage: React.FC = () => {
   return (
     <div style={{ padding: '1px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <PDFViewer imageURL={imageURL} pdfURL={pdfURL} markdownContent={markdownContent} />
-      <div style={{ padding: '16px' }}>
+      <ReactMarkdown>{markdownContent}</ReactMarkdown>
+            <div style={{ padding: '16px' }}>
         <Button variant="contained" color="primary">
           <a href={pdfURL} download style={{ color: 'white', textDecoration: 'none' }}>
             Download PDF
           </a>
         </Button>
       </div>
+      <PDFViewer imageURL={imageURL} pdfURL={pdfURL} />
     </div>
   );
 };
