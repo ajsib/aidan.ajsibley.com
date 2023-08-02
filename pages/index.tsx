@@ -1,14 +1,33 @@
-import { Button, Container, Typography } from '@mui/material';
+// pages/index.tsx
+import React from 'react';
+import PDFViewer from '../components/PDFviewer';
+import { Button } from '@mui/material';
 
-export default function Home() {
+const markdownContent = `
+# Welcome To My Resume Site 📄
+This page is currently under development, check back later for a more interactive 
+look at my resume. For now, you can download a PDF version of my resume below.
+
+
+
+`;
+
+const imageURL = '/AidanSibleyCV.jpg'; // Path to your PDF image
+const pdfURL = '/AidanSibleyCV.pdf'; // Replace this with the actual path to your PDF file
+
+const HomePage: React.FC = () => {
   return (
-    <Container maxWidth="sm">
-      <Typography variant="h4" component="h1" gutterBottom>
-        Welcome to My Resume Site
-      </Typography>
-      <Button variant="contained" color="primary">
-        Click Me
-      </Button>
-    </Container> 
+    <div style={{ padding: '1px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <PDFViewer imageURL={imageURL} pdfURL={pdfURL} markdownContent={markdownContent} />
+      <div style={{ padding: '16px' }}>
+        <Button variant="contained" color="primary">
+          <a href={pdfURL} download style={{ color: 'white', textDecoration: 'none' }}>
+            Download PDF
+          </a>
+        </Button>
+      </div>
+    </div>
   );
-}
+};
+
+export default HomePage;
