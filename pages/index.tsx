@@ -9,8 +9,6 @@ const markdownContent = `
 This page is currently under development, check back later for a more interactive 
 look at my resume. For now, you can download a PDF version of my resume below.
 
-
-
 `;
 
 const imageURL = '/AidanSibleyCV.jpg'; // Path to your PDF image
